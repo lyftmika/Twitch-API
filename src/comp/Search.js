@@ -9,6 +9,11 @@ class Search extends React.Component {
       response: {
         data: {},
       },
+      follows: {
+        data: {
+          follows: [],
+        },
+      },
     }
   }
 
@@ -25,10 +30,14 @@ class Search extends React.Component {
   loadData = () => {
     const user = this.state.name;
     const url = `https://api.twitch.tv/kraken/channels/${user}?client_id=fklodlfzzugl04ylf5nlwurs3gayvl3`;
+    const getFollows = `https://api.twitch.tv/kraken/channels/${user}/follows?client_id=fklodlfzzugl04ylf5nlwurs3gayvl3`;
+    axios.get(getFollows).then((follows) => {
+      this.setState({follows:follows});
+    });
     axios.get(url)
     .then((response) => {
       this.setState({response: response});
-      this.props.user(this.refs.usernameSearch.value, this.state.response);
+      this.props.user(this.refs.usernameSearch.value, this.state.response, this.state.follows);
     });
   }
 

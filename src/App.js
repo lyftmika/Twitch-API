@@ -4,28 +4,31 @@ import Title from './comp/Title';
 import Search from './comp/Search';
 import Main from './comp/Main';
 import Stats from './comp/Stats';
+import Follows from './comp/Follows';
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       response: {
-        data: {}
+        data: {},
+      },
+      follows: {
+        data:{
+          follows:[],
+        },
       },
     }
   }
 
-  handleUserInput = (name, response) => {
-    if(response) {
+  handleUserInput = (name, response, follows) => {
+    if(response && follows) {
       this.setState({
         name: name,
         response: response,
+        follows: follows,
       });
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
   }
 
   componentDidMount() {
@@ -36,11 +39,13 @@ class App extends Component {
     return (
       <div className="App-container">
         <Search user={this.handleUserInput}/>
+
         <div className="card-container">
           <Title response={this.state.response} />
           <Main response={this.state.response} />
           <Stats response={this.state.response} />
         </div>
+        <Follows follows={this.state.follows} />
       </div>
     );
   }

@@ -3,7 +3,6 @@ import React from 'react';
 class Title extends React.Component {
 
   render () {
-    console.log(this.props);
     const data = this.props.response.data;
     return (
       <div className="title-container">

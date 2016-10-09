@@ -11,7 +11,7 @@
   flex-direction: column;
   background-color: rgba(256, 256, 256, 0.9);
 
-
+  min-width: 800px;
   margin: 20px 0;
   padding: 0;
   border: 3px solid #000;
@@ -20,8 +20,8 @@
 }
 
 .card-container:hover {
-  transform: scale(1.09);
-  box-shadow: 0 7px 6px -6px #333;
+  transform: scale(1.01);
+  box-shadow: 0 7px 8px -6px #333;
 }
 
 .main-container {
@@ -106,3 +106,30 @@
   color: #D0F4EA ;
   border: 3px solid #000;
 }
+
+.follows-container {
+  display: flex;
+  justify-content: center;
+}
+
+.follows-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  border: 3px solid #000;
+  padding: 15px;
+}
+
+.follows-follower {
+  width: 150px;
+  padding: 5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
