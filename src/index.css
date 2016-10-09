@@ -1,0 +1,21 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 50px;
+  font-family: 'Open Sans';
+  background: #fff;
+  color: #3D273A;
+}
+
+img {
+    display: none;
+}
+
+img[src] {
+   display: block;
+}
