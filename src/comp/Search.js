@@ -34,6 +34,7 @@ class Search extends React.Component {
     axios.get(getFollows).then((follows) => {
       this.setState({follows:follows});
     });
+
     axios.get(url)
     .then((response) => {
       this.setState({response: response});

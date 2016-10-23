@@ -26,6 +26,11 @@ class App extends Component {
       this.setState({
         name: name,
         response: response,
+      });
+    }
+
+    if(follows) {
+      this.setState({
         follows: follows,
       });
     }

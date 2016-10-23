@@ -8,7 +8,6 @@ class Follows extends React.Component {
         <ul>
           {
             this.props.follows.data.follows.map((follower) => {
-              console.log(follower);
               return <li className="follows-follower" key={follower.user._id}>{follower.user.display_name} </li>;
             })
           }
